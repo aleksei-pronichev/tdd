@@ -1,10 +1,8 @@
 package org.pronichev.corrency;
 
-import java.util.Objects;
-
 public class Dollar {
 
-    int amount;
+    private final int amount;
 
     public Dollar(int amount) {
         this.amount = amount;

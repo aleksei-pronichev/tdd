@@ -17,9 +17,8 @@ class DollarTest {
     })
     void testMultiplication(int multiplier, int expected) {
         var five = new Dollar(5);
-        var product = five.times(multiplier);
-        five.times(multiplier);
-        assertEquals(expected, product.amount);
+
+        assertEquals(new Dollar(expected), five.times(multiplier));
     }
 
     @Test
