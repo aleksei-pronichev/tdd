@@ -16,22 +16,22 @@ class FrancTest {
         "4, 20"
     })
     void testMultiplication(int multiplier, int expected) {
-        var five = new Franc(5);
+        var five = Money.franc(5);
 
-        assertEquals(new Franc(expected), five.times(multiplier));
+        assertEquals(Money.franc(expected), five.times(multiplier));
     }
 
     @Test
     void testEquality() {
-        var obj1 = new Franc(5);
-        var obj2 = new Franc(5);
+        var obj1 = Money.franc(5);
+        var obj2 = Money.franc(5);
         assertEquals(obj1, obj2);
     }
 
     @Test
     void testNotEquality() {
-        var obj1 = new Franc(5);
-        var obj2 = new Franc(6);
+        var obj1 = Money.franc(5);
+        var obj2 = Money.franc(6);
         assertNotEquals(obj1, obj2);
     }
 }

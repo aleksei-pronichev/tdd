@@ -8,15 +8,15 @@ class MoneyTest {
 
     @Test
     void testNotEqualityOfDifferentCurrency() {
-        Money dollar = new Dollar(10);
-        Money franc = new Franc(10);
+        Money dollar = Money.dollar(10);
+        Money franc = Money.franc(10);
         assertNotEquals(dollar, franc);
     }
 
     @Test
     void testEqualityOfSameCurrency() {
-        Money dollar1 = new Dollar(10);
-        Money dollar2 = new Dollar(10);
+        Money dollar1 = Money.dollar(10);
+        Money dollar2 = Money.dollar(10);
         assertEquals(dollar1, dollar2);
     }
 }

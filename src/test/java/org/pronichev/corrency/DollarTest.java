@@ -16,22 +16,22 @@ class DollarTest {
         "4, 20"
     })
     void testMultiplication(int multiplier, int expected) {
-        var five = new Dollar(5);
+        var five = Money.dollar(5);
 
-        assertEquals(new Dollar(expected), five.times(multiplier));
+        assertEquals(Money.dollar(expected), five.times(multiplier));
     }
 
     @Test
     void testEquality() {
-        var obj1 = new Dollar(5);
-        var obj2 = new Dollar(5);
+        var obj1 = Money.dollar(5);
+        var obj2 = Money.dollar(5);
         assertEquals(obj1, obj2);
     }
 
     @Test
     void testNotEquality() {
-        var obj1 = new Dollar(5);
-        var obj2 = new Dollar(6);
+        var obj1 = Money.dollar(5);
+        var obj2 = Money.dollar(6);
         assertNotEquals(obj1, obj2);
     }
 }
