@@ -19,4 +19,10 @@ class MoneyTest {
         Money dollar2 = Money.dollar(10);
         assertEquals(dollar1, dollar2);
     }
+
+    @Test
+    void testCurrency() {
+        assertEquals("USD", Money.dollar(1).currency());
+        assertEquals("CHF", Money.franc(1).currency());
+    }
 }
