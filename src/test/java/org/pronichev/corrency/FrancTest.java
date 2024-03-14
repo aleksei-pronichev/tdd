@@ -34,4 +34,11 @@ class FrancTest {
         var obj2 = Money.franc(6);
         assertNotEquals(obj1, obj2);
     }
+
+    @Test
+    void testDifferentEquality() {
+        var obj1 = new Money(5, "CHF");
+        var obj2 = new Franc(5, "CHF");
+        assertEquals(obj1, obj2);
+    }
 }

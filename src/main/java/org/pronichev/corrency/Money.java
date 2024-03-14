@@ -2,7 +2,7 @@ package org.pronichev.corrency;
 
 import java.util.Objects;
 
-public abstract class Money {
+public class Money {
 
     protected int amount;
     protected String currency;
@@ -20,13 +20,20 @@ public abstract class Money {
         return new Franc(amount, "CHF");
     }
 
-    public abstract Money times(int multiplier);
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
 
     @Override
     public boolean equals(Object o) {
-        var money = (Money) o;
-        return amount == money.amount
-            && Objects.equals(this.getClass(), money.getClass());
+        var that = (Money) o;
+        return amount == that.amount
+            && Objects.equals(this.currency, that.currency);
+    }
+
+    @Override
+    public String toString() {
+        return amount + " " + currency;
     }
 
     public String currency() {
