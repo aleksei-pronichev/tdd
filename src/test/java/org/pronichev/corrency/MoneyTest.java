@@ -1,10 +1,24 @@
 package org.pronichev.corrency;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MoneyTest {
+
+    @ParameterizedTest
+    @CsvSource({
+        "2, 10",
+        "3, 15",
+        "4, 20"
+    })
+    void testMultiplication(int multiplier, int expected) {
+        var five = Money.dollar(5);
+
+        assertEquals(Money.dollar(expected), five.times(multiplier));
+    }
 
     @Test
     void testNotEqualityOfDifferentCurrency() {
